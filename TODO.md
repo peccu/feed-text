@@ -1,0 +1,28 @@
+- [x] bar の max
+- [x] toggle handle
+- [x] スパークの場所移動
+- [x] スパークのサイズ調整
+- [x] メニューから設定ページ
+- [ ] left handだとpinを押すとページ増やしつつページ変わってしまう
+- [ ] local indexed dbに設定と取得したデータを入れる
+- [ ] メニューからピン一覧
+- [ ] 各種カード
+- [ ] 各種取得、認証
+- [ ] RSS の取得
+- [ ] twitter, tumblr
+  - [ ] twitter timestamp to permalink
+  - [ ] embed other tweet, threads, replies
+- [ ] mail
+- [ ] pipedream (from mail)
+- [ ] フルスクリーンの背景色、ファビコン、タイトル
+- [ ] 設定、アカウント、データソース
+- [x] 通知部分の配列、フェードアウト
+- [ ] 未読管理 (データソース毎に ID または時刻？)
+- [ ] vuex, localstorage
+  - [ ] store datasource urls
+  - [ ] store action urls
+- [ ] ダークモード, ライトモード
+- [ ] export import for multi device
+- [ ] 種類アイコン、発信者、タイトル、 (サマリ)、コンテンツ
+- [x] フロントエンドは別のglitchで作った方が作りやすそう
+  - submodule的にしてしまう？

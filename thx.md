@@ -1,0 +1,57 @@
+- tmbrtext
+- Glitch.com
+- Vue.js
+- vue watch
+  - https://vuejs.org/v2/guide/computed.html
+- vue transition
+  - https://vuejs.org/v2/guide/transitions.html
+- vue props
+  - https://vuejs.org/v2/guide/components-props.html
+- vue list  rendering
+  - https://vuejs.org/v2/guide/list.html#Replacing-an-Array
+- vue components
+  - call parent fn https://stackoverflow.com/a/46210210/514411
+  - var.sync https://stackoverflow.com/a/52916921/514411
+- vue router
+  - https://forum.vuejs.org/t/problem-this-router-currentroute-can-not-get-current-route/32001
+- hot reload
+  - https://github.com/vuejs/vue-cli/issues/1132#issuecomment-409916879
+- rss parser
+  - https://dev.to/geekgalgroks/building-an-rss-reader-in-javascript-1ep0
+  - https://www.npmjs.com/package/rss-parser
+  - https://css-tricks.com/how-to-fetch-and-parse-rss-feeds-in-javascript/
+- html decode
+  - https://stackoverflow.com/a/5796744/514411
+- html escape
+  - https://stackoverflow.com/a/9251169/514411
+- CSS flex https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet
+- meta theme https://css-tricks.com/meta-theme-color-and-trickery/
+- https://stackoverflow.com/questions/39682882/how-to-cancel-out-left-right-for-absolutely-positioned-element/39682899
+- spark blur
+  - https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur
+  - https://stackoverflow.com/a/6556655/514411
+- cors
+  - https://github.com/Rob--W/cors-anywhere#demo-server
+- mail
+  - https://github.com/jsdom/jsdom
+  - pipedream
+  - https://nodemailer.com/extras/mailparser/
+  - https://www.raymondcamden.com/2020/04/15/processing-email-sentiment-with-pipedream
+  - https://pipedream.com/docs/workflows/steps/code/#using-npm-packages
+- settimeout
+  - https://www.w3schools.com/jsref/met_win_settimeout.asp
+- prevent double tap
+  - https://stackoverflow.com/a/47131647/514411
+- reload
+  - https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+- image max-width
+  - https://www.w3schools.com/css/css_rwd_images.asp
+- overflow wrap
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap
+- pre tag wrap
+  - https://css-tricks.com/snippets/css/make-pre-text-wrap/
+- mongo
+  - cursor
+    - https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/
+- indexeddb
+  - https://www.raymondcamden.com/2019/10/16/using-indexeddb-with-vuejs
