@@ -30,6 +30,8 @@ export default {
     });
   },
   async deleteCat(cat) {
+    console.log("deleting cat", cat);
+    debugger;
     let db = await this.getDb();
 
     return new Promise(resolve => {
@@ -65,6 +67,7 @@ export default {
   },
 
   async saveCat(cat) {
+    console.log("saving cat", cat);
     debugger;
     let db = await this.getDb();
 

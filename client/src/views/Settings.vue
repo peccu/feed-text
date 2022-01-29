@@ -5,7 +5,7 @@
       ID: {{ cat.id }}
       <div>
         <span><label :for="'Name' + cat.id">Name</label></span>
-        <span><input :id="'Name' + cat.id" :model="cat.name" required/></span>
+        <span><input :id="'Name' + cat.id" v-model="cat.name" required/></span>
       </div>
       <div>
         <span><label :for="'Age' + cat.id">Age</label></span>
@@ -19,7 +19,7 @@
             max="30"
         /></span>
       </div>
-      <button color="green" @click="deleteCat">Delete Cat</button>
+      <button color="green" @click="deleteCat(cat)">Delete Cat</button>
     </div>
     <button color="green" @click="save">Save Cat</button>
     <div>
