@@ -1,1 +1,1 @@
-git merge me && npm ru fix && refresh
+git merge me && cd client ; npm run fix && refresh
