@@ -11,10 +11,15 @@
       </div>
       <div>
         <a
-          :href="'https://twitter.com/' + content.user.screen_name + '/status/' + content.id_str"
+          :href="
+            'https://twitter.com/' +
+              content.user.screen_name +
+              '/status/' +
+              content.id_str
+          "
           target="_blank"
           rel="noreferrer noopener"
-        >{{ new Date(content.created_at) }}
+          >{{ new Date(content.created_at) }}
         </a>
       </div>
       <div>
@@ -46,39 +51,37 @@ export default {
   },
   computed: {
     media() {
-      return this.content.extended_entities.media || this.content.entities.media
+      return (
+        this.content.extended_entities.media || this.content.entities.media
+      );
     },
     sortedEntities() {
       const sorter = (a, b) => {
         return b.indices[0] - a.indices[0];
       };
-      let entities = [
-        "hashtags",
-        "symbols",
-        "user_mentions",
-        "urls",
-        "media"
-      ].filter(k => this.content.entities[k]).flatMap(k =>
-        this.content.entities[k].flatMap(e => {
-          e.ent_type = k;
-          return e;
-        })
-      );
+      let entities = ["hashtags", "symbols", "user_mentions", "urls", "media"]
+        .filter(k => this.content.entities[k])
+        .flatMap(k =>
+          this.content.entities[k].flatMap(e => {
+            e.ent_type = k;
+            return e;
+          })
+        );
       return entities.sort(sorter);
     },
     text() {
       let text = this.content.text;
       let ent = this.sortedEntities;
-      if(ent.length == 0){
-        return text.replaceAll('\n', '<br/>');
+      if (ent.length == 0) {
+        return text.replaceAll("\n", "<br/>");
       }
       return ent.reduce((a, e) => {
         const splitted = this.pickEntities(a, e.indices);
         console.log("entity type: " + e.ent_type, splitted);
-        console.log('with', e);
+        console.log("with", e);
         const ret = this["link_" + e.ent_type](splitted, e);
-        console.log('text', ret);
-        return ret.replaceAll('\n', '<br/>');
+        console.log("text", ret);
+        return ret.replaceAll("\n", "<br/>");
       }, text);
     }
   },
@@ -140,9 +143,9 @@ export default {
       return (
         text.left +
         '<a href="' +
-        ent.expanded_url.replace(/\.jpg/, '?format=jpg&name=large') +
+        ent.expanded_url.replace(/\.jpg/, "?format=jpg&name=large") +
         '" target="_blank" rel="noopener">' +
-        'media' +
+        "media" +
         "</a>" +
         text.right
       );
@@ -152,11 +155,11 @@ export default {
 </script>
 
 <style scoped>
-  .media {
-    width: 100vw;
-    margin: 0 -1em;
-  }
-  img {
-    max-width: 100vw;
-  }
+.media {
+  width: 100vw;
+  margin: 0 -1em;
+}
+img {
+  max-width: 100vw;
+}
 </style>

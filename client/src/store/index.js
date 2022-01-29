@@ -4,18 +4,16 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 // based on https://www.raymondcamden.com/2019/10/16/using-indexeddb-with-vuejs
-import idb from '@/lib/idb';
+import idb from "@/lib/idb";
 
 export default new Vuex.Store({
   state: {
-    cats:[]
+    cats: []
   },
-  mutations: {
-
-  },
+  mutations: {},
   actions: {
     async deleteCat(context, cat) {
-      await idb.deleteCat(cat); 
+      await idb.deleteCat(cat);
     },
     async getCats(context) {
       context.state.cats = [];
@@ -25,10 +23,10 @@ export default new Vuex.Store({
       });
     },
     async saveCat(context, cat) {
-      console.log('dispatched saveCat with ctx:', context);
-      console.log('cat', cat);
+      console.log("dispatched saveCat with ctx:", context);
+      console.log("cat", cat);
       await idb.saveCat(cat);
     }
   },
   modules: {}
-})
+});

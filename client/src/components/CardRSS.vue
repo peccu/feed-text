@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     description() {
-      return this.content.description
+      return this.content.description;
     }
   }
 };

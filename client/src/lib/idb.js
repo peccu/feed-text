@@ -12,17 +12,17 @@ export default {
       console.log("OPENING DB", DB);
       let request = window.indexedDB.open(DB_NAME, DB_VERSION);
 
-      request.onerror = (e) => {
+      request.onerror = e => {
         console.log("Error opening db", e);
         reject("Error");
       };
 
-      request.onsuccess = (e) => {
+      request.onsuccess = e => {
         DB = e.target.result;
         resolve(DB);
       };
 
-      request.onupgradeneeded = (e) => {
+      request.onupgradeneeded = e => {
         console.log("onupgradeneeded");
         let db = e.target.result;
         db.createObjectStore("cats", { autoIncrement: true, keyPath: "id" });
@@ -32,7 +32,7 @@ export default {
   async deleteCat(cat) {
     let db = await this.getDb();
 
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       let trans = db.transaction(["cats"], "readwrite");
       trans.oncomplete = () => {
         resolve();
@@ -45,7 +45,7 @@ export default {
   async getCats() {
     let db = await this.getDb();
 
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       let trans = db.transaction(["cats"], "readonly");
       trans.oncomplete = () => {
         resolve(cats);
@@ -54,7 +54,7 @@ export default {
       let store = trans.objectStore("cats");
       let cats = [];
 
-      store.openCursor().onsuccess = (e) => {
+      store.openCursor().onsuccess = e => {
         let cursor = e.target.result;
         if (cursor) {
           cats.push(cursor.value);
@@ -68,7 +68,7 @@ export default {
     debugger;
     let db = await this.getDb();
 
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       let trans = db.transaction(["cats"], "readwrite");
       trans.oncomplete = () => {
         resolve();
@@ -77,5 +77,5 @@ export default {
       let store = trans.objectStore("cats");
       store.put(cat);
     });
-  },
+  }
 };

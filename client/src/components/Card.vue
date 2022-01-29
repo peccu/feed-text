@@ -1,5 +1,6 @@
 <template>
-  <article class="inner">{{ content.feedTextType }}
+  <article class="inner">
+    {{ content.feedTextType }}
     <CardRSS v-if="content.feedTextType == 'rss'" :i="i" :content="content" />
     <CardTwitter
       v-if="content.feedTextType == 'twitter'"
