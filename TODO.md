@@ -9,6 +9,7 @@
 - [ ] 各種カード
 - [ ] 各種取得、認証
 - [ ] RSS の取得
+- [ ] RSS sourceを併記する
 - [ ] twitter, tumblr
   - [ ] twitter timestamp to permalink
   - [ ] embed other tweet, threads, replies
