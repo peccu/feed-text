@@ -369,7 +369,8 @@ export default {
         }
       ],
       notifications: [],
-      feeds: [{ id: 1, url: "https://dev.to/feed/" }]
+      feeds: [{ id: 1, url: "https://dev.to/feed/" },
+              { id: 2, url: "https://blog.miguelcoba.com/rss.xml"}]
     };
   },
   computed: {
@@ -383,7 +384,7 @@ export default {
   mounted() {
     this.notifications.push("dsbd loaded");
     this.notifications.push("cached 100MB");
-    // this.fetchRss();
+    this.fetchRss();
     // this.fetchPipe();
   },
   methods: {
