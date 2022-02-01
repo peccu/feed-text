@@ -34,8 +34,7 @@ export default {
       location.reload();
     },
     gotostart() {
-      console.log("gotostart")
-      this.goto(1)
+      this.goto("pg1");
     }
   }
 };

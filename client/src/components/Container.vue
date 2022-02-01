@@ -41,8 +41,8 @@ export default {
       const width = this.$refs.container.firstElementChild.clientWidth;
       //console.log("scroll, width", scroll, width);
       //console.log("scroll, ceil(abs(scroll)/width)+1", scroll, Math.ceil(Math.abs(scroll) / width) + 1)
-      this.current = Math.ceil(Math.abs(scroll) / width) + 1;
-      this.$emit("update:current", this.current);
+      let current = Math.ceil(Math.abs(scroll) / width) + 1;
+      this.$emit("update:current", current);
     }
   },
   mounted() {
@@ -50,8 +50,9 @@ export default {
     if (!window.location.hash.match(/^#/)) {
       return;
     }
-    this.current = parseInt(window.location.hash.slice(1), 10);
-    scrollTo("pg" + this.current);
+    let current = parseInt(window.location.hash.slice(1), 10);
+    this.$emit("update:current", current);
+    scrollTo("pg" + current);
   },
   unmounted() {
     this.$refs.container.removeEventListener("scroll", this.handleScroll);
