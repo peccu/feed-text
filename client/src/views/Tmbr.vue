@@ -385,7 +385,7 @@ export default {
     this.notifications.push("dsbd loaded");
     this.notifications.push("cached 100MB");
     this.fetchRss();
-    // this.fetchPipe();
+    this.fetchPipe();
   },
   methods: {
     fetchRss() {

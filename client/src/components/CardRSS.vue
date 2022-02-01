@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h3>
+      {{ content.feed.title }}
+    </h3>
     <h1>
       <a :href="content.link" target="_blank" rel="noreferrer noopener">
         {{ i + 1 }}, {{ content.title }}
@@ -25,7 +28,7 @@ export default {
 </script>
 
 <style>
-h1 {
+h1, h3 {
   margin: 0;
 }
 </style>
