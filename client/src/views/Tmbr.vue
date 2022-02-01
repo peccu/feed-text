@@ -24,7 +24,10 @@
       :like="like"
       :rblg="rblg"
     />
-    <ActionOverlay :showAction.sync="showAction" />
+    <ActionOverlay
+      :showAction.sync="showAction"
+      :goto="scrollTo"
+    />
   </div>
 </template>
 

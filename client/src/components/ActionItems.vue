@@ -16,15 +16,26 @@
       <a class="actionicon">*</a>
       <a class="actiontitle">Reload</a>
     </div>
+    <div class="actionitem" @click="gotostart">
+      <a class="actionicon">*</a>
+      <a class="actiontitle">Go to start</a>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "ActionItems",
+  props: {
+    goto: Function
+  },
   methods: {
     reload() {
       location.reload();
+    },
+    gotostart() {
+      console.log("gotostart")
+      this.goto(1)
     }
   }
 };

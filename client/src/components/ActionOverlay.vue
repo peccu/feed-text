@@ -2,7 +2,7 @@
   <div>
     <div class="actionoverlaybg" @click="hide" v-if="showAction"></div>
     <div class="actionoverlay" v-if="showAction">
-      <ActionItems />
+      <ActionItems :goto="goto" />
     </div>
   </div>
 </template>
@@ -15,7 +15,8 @@ export default {
     ActionItems
   },
   props: {
-    showAction: Boolean
+    showAction: Boolean,
+    goto: Function
   },
   methods: {
     hide() {
