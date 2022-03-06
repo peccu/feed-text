@@ -6,7 +6,7 @@ function escapeHTML(html) {
 }
 
 */
-const decode = (entity) => {
+const decode = entity => {
   const textarea = document.createElement("textarea");
   textarea.innerHTML = entity;
   return textarea.value;
@@ -25,18 +25,18 @@ const pickByKeys = (dom, keys) =>
     return acc;
   }, {});
 
-const parseRSS = (data) => {
+const parseRSS = data => {
   console.log(data);
   const keys = ["title", "author", "link", "description"];
   const feed = pickByKeys(data, keys);
   feed.description = decode(feed.description);
   const _items = data.querySelectorAll("item");
-  const items = [..._items].map((e) => {
+  const items = [..._items].map(e => {
     const keys = ["title", "author", "pubDate", "link", "description"];
     const item = pickByKeys(e, keys);
     item.description = decode(item.description);
     const category = pickElements(e, "category");
-    const categories = [...category].map((c) => {
+    const categories = [...category].map(c => {
       return c.innerHTML;
     });
     item.feed = feed;
@@ -47,10 +47,10 @@ const parseRSS = (data) => {
   return items;
 };
 
-export const fetchFeed = (feed) => {
+export const fetchFeed = feed => {
   return fetch(feed)
-    .then((response) => response.text())
-    .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+    .then(response => response.text())
+    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
     .then(parseRSS);
 };
 export default function getFeeds() {
@@ -58,7 +58,7 @@ export default function getFeeds() {
   feeds.push({ id: 1, url: "https://dev.to/feed/" });
   return fetchFeeds(feeds);
 }
-export const fetchFeeds = (feeds) => {
-  return feeds.map((feed) => fetchFeed(feed.url));
+export const fetchFeeds = feeds => {
+  return feeds.map(feed => fetchFeed(feed.url));
 };
 // getFeeds();

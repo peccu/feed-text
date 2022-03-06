@@ -24,10 +24,7 @@
       :like="like"
       :rblg="rblg"
     />
-    <ActionOverlay
-      :showAction.sync="showAction"
-      :goto="scrollTo"
-    />
+    <ActionOverlay :showAction.sync="showAction" :goto="scrollTo" />
   </div>
 </template>
 
@@ -372,8 +369,10 @@ export default {
         }
       ],
       notifications: [],
-      feeds: [{ id: 1, url: "https://dev.to/feed/" },
-              { id: 2, url: "https://blog.miguelcoba.com/rss.xml"}]
+      feeds: [
+        { id: 1, url: "https://dev.to/feed/" },
+        { id: 2, url: "https://blog.miguelcoba.com/rss.xml" }
+      ]
     };
   },
   computed: {
